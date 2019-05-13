@@ -36,7 +36,7 @@ class TodoSearch extends React.Component {
       <form className="search" onSubmit={this.searchTodo}>
         <input
           type="text"
-          placeholder="Search todo list"
+          placeholder="Input search here"
           value={this.state.inputText}
           onChange={this.saveInputHandler}
         />

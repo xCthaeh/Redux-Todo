@@ -1,21 +1,23 @@
 body {
-  background-color: rgb(14, 16, 129);
+  background-color: #2D0B0B;
 }
 .container {
-  border: 2px solid purple;
+  border: 2px solid #411010;
   margin-left: 230px;
   width: 70%;
   height: 700px;
   border-radius: 100px;
-  box-shadow: inset 60px 0 120px rgb(60, 0, 128),
-    inset -60px 0 120px rgb(114, 33, 124);
+  box-shadow: inset 60px 0 120px #694F1B,
+    inset -60px 0 120px #411010;
 }
 
 .container h1 {
   margin-top: 50px;
-  color: rgb(245, 239, 248);
-  font-size: 35px;
+  color: #BFCE3B;
+  font-size: 3.5rem;
   text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+
 }
 
 .container .todo {
@@ -34,19 +36,24 @@ body {
   padding: 20px;
   margin: 20px;
   font-size: 20px;
-  border: 1px solid rgb(14, 16, 129);
+  border: 1px solid #411010;
+  background-color: rgb(196, 170, 119);
   border-radius: 5px;
+}
+
+::placeholder {
+  color:#411010;
 }
 
 .container .form button {
   padding: 10px;
-  border: 3px solid purple;
+  border: 3px solid #411010;
   font-size: 15px;
   border-radius: 10px;
 }
 
 .container .form button:hover {
-  background-color: rgb(14, 16, 129);
+  background-color: #2D0B0B;
   color: white;
   border-radius: 10px;
 }
@@ -61,25 +68,27 @@ body {
 .search input {
   width: 70%;
   padding: 8px;
+  background-color: rgb(196, 170, 119);
   font-size: 20px;
-  border: 1px solid rgb(14, 16, 129);
+  border: 1px solid #411010;
   border-radius: 5px;
 }
 
 .search button {
   margin: 5px;
   padding: 10px;
-  border: 2px solid purple;
+  border: 2px solid #411010;
   font-size: 15px;
   border-radius: 10px;
   width: 15%;
   text-align: center;
-  background-color: rgb(85, 7, 85);
+  background-color: #694F1B;
   color: white;
+  font-weight: bold;
 }
 
 .container .search button:hover {
-  background-color: rgb(14, 16, 129);
+  background-color: #2D0B0B;
   color: white;
   border-radius: 10px;
 }
@@ -103,7 +112,7 @@ body {
 .submit-btn {
   height: 68px;
   margin-top: 20px;
-  background-color: rgb(85, 7, 85);
+  background-color: #694F1B;
   color: white;
 }
 
