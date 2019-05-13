@@ -1,24 +1,99 @@
 import React from "react";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
+import TodoSearch from "./components/TodoSearchResult";
+import ToDoSearchResult from "./components/TodoSearchResult";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    todos: [],
+    todoSearch: []
+  };
+
+  updateTodosHandler = (event, todos) => {
+    this.setState({ todos: todos });
+  };
+
+  //Function to update the search result todo's state
+  updateSearchHandler = (event, searchTodos) => {
+    this.setState({ todoSearch: searchTodos });
+  };
+
+  //Function to clear search
+  clearSearchHandler = () => {
+    this.setState({
+      todoSearch: []
+    });
+  };
+
+  //Function to handle clicking on a todo (whether it's completed or incomplete)
+  todoClickHandler = (event, id) => {
+    const todoArr = this.state.todos.slice();
+    const todo = todoArr.filter(td => td.id === id);
+
+    todo[0].completed = !todo[0].completed;
+    this.setState({ todos: todoArr });
+  };
+
+  saveStateToLocalStorage() {
+    for (let key in this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+  hydrateStateWithLocalStorage() {
+    for (let key in this.state) {
+      if (localStorage.hasOwnProperty(key)) {
+        let value = localStorage.getItem(key);
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          this.setState({ [key]: value });
+        }
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+    this.saveStateToLocalStorage();
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <h1>TODO APP</h1>
+        <TodoList todos={this.state.todos} todoClick={this.todoClickHandler} />
+        <TodoForm
+          todos={this.state.todos}
+          todoSearch={this.state.todoSearch}
+          updateTodos={this.updateTodosHandler}
+          updateSearch={this.updateSearchHandler}
+        />
+        <ToDoSearchResult
+          todos={this.state.todoSearch}
+          todoClick={this.todoClickHandler}
+        />
+        <TodoSearch
+          todos={this.state.todos}
+          updateSearch={this.updateSearchHandler}
+          clearSearch={this.clearSearchHandler}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
