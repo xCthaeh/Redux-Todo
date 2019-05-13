@@ -1,8 +1,9 @@
 import React from "react";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
-import TodoSearch from "./components/TodoSearchResult";
+import TodoSearch from "./components/TodoSearch";
 import ToDoSearchResult from "./components/TodoSearchResult";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -42,6 +43,7 @@ class App extends React.Component {
     for (let key in this.state) {
       if (localStorage.hasOwnProperty(key)) {
         let value = localStorage.getItem(key);
+
         try {
           value = JSON.parse(value);
           this.setState({ [key]: value });
@@ -54,6 +56,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.hydrateStateWithLocalStorage();
+
     window.addEventListener(
       "beforeunload",
       this.saveStateToLocalStorage.bind(this)
@@ -71,7 +74,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>TODO APP</h1>
+        <h1>To-do List</h1>
         <TodoList todos={this.state.todos} todoClick={this.todoClickHandler} />
         <TodoForm
           todos={this.state.todos}
