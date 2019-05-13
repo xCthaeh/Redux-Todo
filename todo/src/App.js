@@ -15,19 +15,16 @@ class App extends React.Component {
     this.setState({ todos: todos });
   };
 
-  //Function to update the search result todo's state
   updateSearchHandler = (event, searchTodos) => {
     this.setState({ todoSearch: searchTodos });
   };
 
-  //Function to clear search
   clearSearchHandler = () => {
     this.setState({
       todoSearch: []
     });
   };
 
-  //Function to handle clicking on a todo (whether it's completed or incomplete)
   todoClickHandler = (event, id) => {
     const todoArr = this.state.todos.slice();
     const todo = todoArr.filter(td => td.id === id);
