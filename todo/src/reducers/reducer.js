@@ -1,8 +1,4 @@
-import {
-  ADD_TODO,
-  TOGGLE_TODO,
-  DELETE_TODOS
-} from "../actions/actions";
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODOS } from "../actions/actions";
 
 let defaultState = {
   todos: [

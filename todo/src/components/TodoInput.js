@@ -1,29 +1,28 @@
-import React from 'react';
-import { connect } from 'react-redux'
+import React from "react";
+import { connect } from "react-redux";
 
-import { addTodo } from '../actions/actions'
+import { addTodo } from "../actions/actions";
 
-class TodoInput extends React.Component{
-  constructor(props){
+class TodoInput extends React.Component {
+  constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       inputValue: ""
     };
-  };
+  }
 
   changeInputValue = e => {
     this.setState({ inputValue: e.target.value });
-  }
+  };
 
   createTodo = e => {
     e.preventDefault();
     this.setState({ inputValue: "" });
     this.props.addTodo(this.state.inputValue);
-
   };
 
-  render(){
-    console.log(this.props, this.state)
+  render() {
+    console.log(this.props, this.state);
     return (
       <form onSubmit={this.createTodo}>
         <input
@@ -35,13 +34,14 @@ class TodoInput extends React.Component{
         <button type="submit"> Add a Task </button>
       </form>
     );
-  };
+  }
 }
 
-
-
-function mapStateToProps(state){
-  return {}
+function mapStateToProps(state) {
+  return {};
 }
 
-export default connect(mapStateToProps, {addTodo: addTodo})(TodoInput);
+export default connect(
+  mapStateToProps,
+  { addTodo: addTodo }
+)(TodoInput);
