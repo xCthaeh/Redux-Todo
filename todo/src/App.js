@@ -7,10 +7,12 @@ import TodoInput from "./components/TodoInput";
 class App extends Component {
   render() {
     return (
+        <div className="container">
       <div className="App">
+      <h1> To-do List</h1>
         <TodoList />
         <TodoInput />
-      </div>
+      </div></div>
     );
   }
 }

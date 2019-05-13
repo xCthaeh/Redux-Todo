@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { addTodo } from "../actions/actions";
+import "../App.css";
 
 class TodoInput extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class TodoInput extends React.Component {
           onChange={this.changeInputValue}
           placeholder="Input task here"
         />
-        <button type="submit"> Add a Task </button>
+        <button type="submit" className="add-btn"> Add a Task </button>
       </form>
     );
   }

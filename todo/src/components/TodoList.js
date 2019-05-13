@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import Todo from "./Todo";
 import { deleteTodos } from "../actions/actions";
+import "../App.css";
 
 function TodoList(props) {
   return (
     <div>
-      <button onClick={() => props.deleteTodos()}>
+      <button className="todo-btn" onClick={() => props.deleteTodos()}>
         {" "}
         Delete Completed Tasks{" "}
       </button>
