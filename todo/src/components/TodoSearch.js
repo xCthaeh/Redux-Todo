@@ -40,8 +40,8 @@ class TodoSearch extends React.Component {
           value={this.state.inputText}
           onChange={this.saveInputHandler}
         />
-        <button type="submit">Search</button>
-        <button onClick={this.clearSearch}>Clear Search</button>
+          <button type="submit">Search</button>
+          <button onClick={this.clearSearch}>Clear Search</button>
       </form>
     );
   }
