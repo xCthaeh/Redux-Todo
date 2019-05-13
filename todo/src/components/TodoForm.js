@@ -46,8 +46,8 @@ class TodoForm extends React.Component {
           onChange={this.saveInputHandler}
           value={this.state.inputText}
         />
-        <button type="submit">Add To-do</button>
-        <button onClick={this.removeCompleted}>Clear Completed Tasks</button>
+        <button type="submit" className="submit-btn">Add To-do</button>
+        <button onClick={this.removeCompleted} className="submit-btn">Clear Completed Tasks</button>
       </form>
     );
   }

@@ -74,23 +74,28 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>To-do List</h1>
-        <TodoList todos={this.state.todos} todoClick={this.todoClickHandler} />
-        <TodoForm
-          todos={this.state.todos}
-          todoSearch={this.state.todoSearch}
-          updateTodos={this.updateTodosHandler}
-          updateSearch={this.updateSearchHandler}
-        />
-        <ToDoSearchResult
-          todos={this.state.todoSearch}
-          todoClick={this.todoClickHandler}
-        />
-        <TodoSearch
-          todos={this.state.todos}
-          updateSearch={this.updateSearchHandler}
-          clearSearch={this.clearSearchHandler}
-        />
+        <h1 className="glow">To-do List</h1>
+        <div className="content-wrapper">
+          <TodoList
+            todos={this.state.todos}
+            todoClick={this.todoClickHandler}
+          />
+          <TodoForm
+            todos={this.state.todos}
+            todoSearch={this.state.todoSearch}
+            updateTodos={this.updateTodosHandler}
+            updateSearch={this.updateSearchHandler}
+          />
+          <ToDoSearchResult
+            todos={this.state.todoSearch}
+            todoClick={this.todoClickHandler}
+          />
+          <TodoSearch
+            todos={this.state.todos}
+            updateSearch={this.updateSearchHandler}
+            clearSearch={this.clearSearchHandler}
+          />
+        </div>
       </div>
     );
   }
