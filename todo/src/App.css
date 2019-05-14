@@ -5,6 +5,7 @@
   height: 700px;
   width: 600px;
   box-shadow: 5px 10px 80px 30px #60207E inset;
+  background-color: #297AA3;
 }
 .container {
   display: flex;
@@ -26,22 +27,26 @@ body {
 }
 
 .todo-btn {
-  color: white;
+  color: rgb(77, 189, 245);
   background-color: #60207E;
-  border: 3px solid #26978C;
-  border-radius: 5px;
-  width: 90px;
+  border: 3px solid rgb(122, 214, 36);
+  border-radius: 15px;
+  width: 180px;
+  height: 40px;
   margin-top: 50px;
   margin-bottom: 60px;
+  font-weight: bold;
 }
 
 .add-btn {
-  color: white;
+  color: rgb(77, 189, 245);
+  font-weight: bold;
   background-color: #60207E;
-  border: 3px solid #26978C;
-  border-radius: 5px;
+  border: 3px solid rgb(122, 214, 36);
+  border-radius: 10px;
   width: 90px;
   margin-left: 20px;
+  padding: 4px;
 }
 
 h1 {
